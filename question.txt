@@ -1,0 +1,3 @@
+第一个 就是checkout的问题 我的checkout按理说会回到上一次add或者commit  可是 在我add到暂存区后修改checkout没有反应
+第二个 就是push的问题  至今出现了三次  一次是因为我的本地没有readme  一次是因为我没有add和commit就push  这一次是因为我在hub删除了一个txt 然后本地直接删除 重建了一个md文件 可是一直报错
+第三个 就是add. 感觉挺好玩 有空看下
