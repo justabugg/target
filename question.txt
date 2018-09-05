@@ -41,5 +41,5 @@ Automatic merge failed; fix conflicts and then commit the result.
 第七个 git pull 以及git merge合并
 
 
-第八个  解决冲突的方法
+第八个  解决冲突的方法。
 
