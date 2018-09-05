@@ -31,3 +31,15 @@ CONFLICT (rename/delete): daily2.txt deleted in 806520bbd6ab1032601cf22f919ce04d
 Automatic merge failed; fix conflicts and then commit the result.
 这是pull的时候报的
 最后改回了txt然后删了md 重新pull 现在我尝试重新正常的用代码删除txt再添加md
+
+
+第五个 关于清除untrack file
+
+第六个  stash的作用  在例子里说的是手头的dev做了一半没commit，想做个分支修复bug就先stash，可是我直接checkout -b一个bug分支也没事啊 原来的文件add一下不可以么 感觉错过了什么东西
+
+
+第七个 git pull 以及git merge合并
+
+
+第八个  解决冲突的方法
+
