@@ -39,7 +39,12 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 
 第七个 git pull 以及git merge合并
+解答：  git pull将会抓取最新的提交分支到本地 再合并  git merge是从指定的commit合并到当前分支 即GIT PULL=GIE FETCH +GIT MERGE
 
 
 第八个  解决冲突的方法。
+
+
+第九个 rebase
+
 
