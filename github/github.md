@@ -57,9 +57,15 @@ stash的作用  在例子里说的是手头的dev做了一半没commit，想做�
 解答：  git pull将会抓取最新的提交分支到本地 再合并  git merge是从指定的commit合并到当前分支 即GIT PULL=GIE FETCH +GIT MERGE
 
 
-第八个  解决冲突的方法。
+第八个 
+----
+ 解决冲突的方法。
 
 
-第九个 rebase
+第九个
+---
+ rebase
 
-
+第十个
+----
+关于push时还是需要输密码
