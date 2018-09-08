@@ -1,4 +1,4 @@
-第一个 
+﻿第一个 
 ===
 一个好玩的循环  
 n=1   
@@ -59,7 +59,7 @@ def move(n,a,b,c):
           
 第七个
 ====
-isinstance
+isinstance！
 
 
 
