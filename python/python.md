@@ -180,7 +180,7 @@ def count():
 >>> f3()
 9
 
-    ```
+```
 
 第十五个 nonloca和(global没懂 到模块继续看)
 ========
@@ -224,9 +224,9 @@ print("global:", x)
 
 结果
 
-# inner: 2
-# outer: 2
-# global: 0
+#inner: 2
+#outer: 2
+#global: 0
 ```
 加了nonlocal就说明该变量在整个大函数里有效<br>
 **global**
@@ -247,9 +247,9 @@ print("global:", x)
 
 结果
 
-# inner: 2
-# outer: 1
-# global: 2
+#inner: 2
+#outer: 1
+#global: 2
 ```
 
 global 是对整个环境下的变量起作用，而不是对函数类的变量起作用。
