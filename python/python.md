@@ -155,3 +155,100 @@ def aishi():
 
 第十三个 冒泡排序
 ====
+
+
+第十四个 闭包引用循环变量
+=====
+用一个函数绑定参数
+```
+
+def count():
+    def f(j):
+        def g():
+            return j*j
+        return g
+    fs = []
+    for i in range(1, 4):
+        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
+    return fs
+
+>>> f1, f2, f3 = count()
+>>> f1()
+1
+>>> f2()
+4
+>>> f3()
+9
+
+    ```
+
+第十五个 nonloca和(global没懂 到模块继续看)
+========
+在讨论区有个人用了nonloca，谷歌了一下<br>
+**首先，要明确 nonlocal 关键字是定义在闭包里面的。**<br>
+```
+请看以下代码：
+
+x = 0
+def outer():
+    x = 1
+    def inner():
+        x = 2
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+outer()
+print("global:", x)
+
+# inner: 2
+# outer: 1
+# global: 0
+```
+加入nonlocal<br>
+```
+x = 0
+def outer():
+    x = 1
+    def inner():
+        nonlocal x
+        x = 2
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+outer()
+print("global:", x)
+
+结果
+
+# inner: 2
+# outer: 2
+# global: 0
+```
+加了nonlocal就说明该变量在整个大函数里有效<br>
+**global**
+```
+x = 0
+def outer():
+    x = 1
+    def inner():
+        global x
+        x = 2
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+outer()
+print("global:", x)
+
+结果
+
+# inner: 2
+# outer: 1
+# global: 2
+```
+global 是对整个环境下的变量起作用，而不是对函数类的变量起作用。
