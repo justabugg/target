@@ -1,4 +1,4 @@
-﻿第一个 一个好玩的循环<br> 
+第一个 一个好玩的循环<br> 
 ===
 ```
 n=1   
@@ -251,4 +251,57 @@ print("global:", x)
 # outer: 1
 # global: 2
 ```
+
 global 是对整个环境下的变量起作用，而不是对函数类的变量起作用。
+
+接nonlocal
+------
+```
+def fun1():
+    x = 5
+    def fun2():
+        x *= 2
+        return x
+    return fun2()
+```
+**报错** UnboundLocalError: local variable 'x' referenced before assignment<br>
+对于fun1函数，x为局部变量。对于fun2函数，x为非全局的的外部变量。当在fun2中对x进行修改时，会将x视为fun2的局部变量，屏蔽掉fun1中对x的定义；如果仅仅在fun2中对x进行读取，则不会出现这个错误。
+
+**修改后**<br>
+```
+def fun1():
+    x = 5
+    def fun2():
+        nonlocal x
+        x *= 2
+        return x
+    return fun2()
+ 
+fun1()
+Out[14]: 10
+```
+
+第十六个 返回函数之计数器
+=====
+即每次调用输出＋1<br>
+根据要求，返回一个计数函数<br>
+```
+首先
+def creatcounter():
+  n=0
+  def counter（）： #根据要求 这是计数函数
+    n=n+1
+    return n
+  return
+
+  看起来没错 但是像上面的十五最后一个例子  内部counter修改了n，这样会报错
+  所以要加上nonlocal
+ def creatcounter():
+  n=0
+  def counter（）： #根据要求 这是计数函数
+    nonlocal n
+    n=n+1
+    return n
+  return
+  ```
+  
