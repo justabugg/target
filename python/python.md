@@ -304,4 +304,24 @@ def creatcounter():
     return n
   return
   ```
-  
+
+第十七个 装饰器decoorator
+===========
+简单的装饰器容易理解 这里写一下三层嵌套的自定义装饰器<br>
+```
+def log(text):
+    def decorator(func):
+         @functools.wraps(func)  #这一步是改函数的签名_name_
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+
+@log('execute')
+def now():
+  print('2018.9.11')  #这里相当于 now = log('execute')(now)
+>>> now()
+execute now():
+2015-3-25
+```
