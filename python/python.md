@@ -325,3 +325,12 @@ def now():
 execute now():
 2015-3-25
 ```
+
+第十八个 if __name__=='__main__'
+-----------
+google
+
+
+第十九个
+-----------
+file like object
