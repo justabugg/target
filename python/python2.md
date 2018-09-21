@@ -66,9 +66,17 @@ self.n += 3
 第七个 strip()
 =========
 在IO编程的读文件的时候，迭代调用readline的时候删除末尾的\n<br>
+#### 解答
 ```
 for line in f.readlines():
     print(line.strip()) # 把末尾的'\n'删掉
+```
+也可以这样
+```
+while True:
+  s=f.readline()
+  if s==''
+  print(f.strip())
 ```
 
 
@@ -76,6 +84,50 @@ for line in f.readlines():
 ====
 这个在读文件的时候用了try....finally，我在想如果写一个会报错的文件，再结合之前的文件调试写一个try..except..finally怎么样，可是现在IO找不到路径(明明是对的啊)
 #### 解答
+emmm玄幻 其实路径就是 /usres/assboy/python project/IO.py<br>
+其次这个就是读文件！并不是运行文件 所以就是显示了我的代码而已
 
 
+第九个 os模块练习
+========
+1.利用os模块编写一个能实现dir -l输出的程序。<br>
+2.编写一个程序，能在当前目录以及当前目录的所有子目录下查找文件名包含指定字符串的文件，并打印出相对路径。
+
+
+第十个 class
+====
+#### 解答
+JSON进阶的时侯讲到了class的实例无法直接用dump转换，除了用了slots的class的实例自带一个__dict__，就是一个dict可以直接用<br>
+再把dict转成class
+```
+def dict2student(d):
+    return Student(d['name'], d['age'], d['score'])
+```
+
+第十个 os.getpid和os.getppid
+======
+
+
+
+
+第十一个 p.close()
+=======
+
+
+第十二个 时间
+=========
+在写进程池的时候用了一个time,random模块<br>
+#### 解答
+大概是这样实现
+```python
+import time random
+start=time.time()
+time.sleep(random.random())
+end=time.time()
+print(end-start)
+```
+
+
+第十三个 子进程控制输入输出
+======
 
