@@ -66,19 +66,20 @@ def move(n,a,b,c):
     move(n-1,b,a,c)
 ```
 
-第七个
+第七个:sob:
 ====
 isinstance！
 
 
-第八个 斐波拉契
+第八个 斐波拉契  :cat:
 ===
 斐波拉契数列 后一个等于前两个数之和<br>
 首先定义了a，b来加起来作为第三个输出，这样就是a，b，a+b 达到了目的<br>
 其次 定义函数的执行次数 需要用一个n来协调<br>
 这是一般的方法
-```
+```py
 def fib(max):
+  n,a,b=0,0,1
   while n<max:
     return b
     a=b
@@ -86,7 +87,7 @@ def fib(max):
   return'ok'
 ```
 这是generator的方法
-```
+```py
 def fib(max):
   while n<max:
     yield b
@@ -95,16 +96,16 @@ def fib(max):
   return'ok'
 ```
 
-第九个 杨辉三角
+第九个 杨辉三角:cat:
 ===
 杨辉三角问题<br>
+(https://github.com/justabugg/test/blob/master/try/2.md)
 
-
-第十个 reduce和map结合的问题
+第十个 reduce和map结合的问题:cat:
 ======
 用这个方法定义一个把str转为int的函数<br>
 首先要把str转成单独的数字，再用x\*10＋y变成一整个数<br>
-```
+```py
 from functools import reduce
 def fn(x,y):
   return x*10+y
@@ -116,7 +117,7 @@ def char(x):
 reduce(fn,map(char,'1233213'))
 ```
 
-第十一个 埃氏筛法
+第十一个 埃氏筛法:cat:
 =====
 计算素数的一个方法是埃氏筛法，它的算法理解起来非常简单：
 
@@ -130,26 +131,26 @@ reduce(fn,map(char,'1233213'))
 
 取新序列的第一个数3，它一定是素数，然后用3把序列的3的倍数筛掉：
 现在实现
-```
-先构造一个从3开始的奇数序列
+```py
+#先构造一个从3开始的奇数序列
 def jishu():
   n=1
   while True:
     n=n+2
     yield n
 
-定义一个筛选函数
+#定义一个筛选函数
 def choice():
-  return lambad x:x%n>0
-最后定义生成器
+  return lambda x:x%n>0
+#最后定义生成器
 def aishi():
   yield 2
   while True:
     n=next(jishu)
     yield n
     jishu=filter(choice,jishu)
-最后因为输出是无限的generation
-用for b in aishi():
+#最后因为输出是无限的generation
+for b in aishi():
   if b <1000:
     print(b)
   else:
@@ -157,11 +158,16 @@ def aishi():
 ```
 
 
-第十二个 回文数
+第十二个 回文数:cat:
 =====
+```py
+def huiwen(x):
+  n=str(x)
+  if n[:]==n[::-1]
+    return n
+```
 
-
-第十三个 冒泡排序
+第十三个 冒泡排序:sob:
 ====
 
 
