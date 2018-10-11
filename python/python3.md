@@ -31,4 +31,4 @@ ok
 		1.请编写一个decorator，能在函数调用的前后打印出'begin call'和'end call'的日志。
 		2.编写一个decorator，不管有无参数输入都可以输出
 		3.编写一个decorator，可以输出函数执行的时间
-写在test里了
+写在test里
