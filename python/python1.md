@@ -171,11 +171,10 @@ def huiwen(x):
 ====
 
 
-第十四个 闭包引用循环变量
+第十四个 闭包引用循环变量:cat:
 =====
 用一个函数绑定参数
-```
-
+```py
 def count():
     def f(j):
         def g():
@@ -196,7 +195,7 @@ def count():
 
 ```
 
-第十五个 nonloca和(global没懂 到模块继续看)
+第十五个 nonloca和global:sob:
 ========
 在讨论区有个人用了nonloca，谷歌了一下<br>
 **首先，要明确 nonlocal 关键字是定义在闭包里面的。**<br>
@@ -295,12 +294,11 @@ fun1()
 Out[14]: 10
 ```
 
-第十六个 返回函数之计数器
+第十六个 返回函数之计数器:cat:
 =====
 即每次调用输出＋1<br>
 根据要求，返回一个计数函数<br>
-```
-首先
+```py
 def creatcounter():
   n=0
   def counter（）： #根据要求 这是计数函数
@@ -308,8 +306,7 @@ def creatcounter():
     return n
   return
 
-  看起来没错 但是像上面的十五最后一个例子  内部counter修改了n，这样会报错
-  所以要加上nonlocal
+#看起来没错 但是像上面的十五最后一个例子  内部counter修改了n，这样会报错所以要加上nonlocal
  def creatcounter():
   n=0
   def counter（）： #根据要求 这是计数函数
@@ -318,11 +315,12 @@ def creatcounter():
     return n
   return
   ```
+这里涉及到从函数内部修改外部函数局部变量，一般三种：1把外部变量变成可变变量，2nonlocal，3global
 
-第十七个 装饰器decoorator
+第十七个 装饰器decoorator:cat:
 ===========
 简单的装饰器容易理解 这里写一下三层嵌套的自定义装饰器<br>
-```
+```py
 def log(text):
     def decorator(func):
          @functools.wraps(func)  #这一步是改函数的签名_name_
