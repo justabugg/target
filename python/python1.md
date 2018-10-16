@@ -197,102 +197,52 @@ def count():
 
 第十五个 nonloca和global:sob:
 ========
-在讨论区有个人用了nonloca，谷歌了一下<br>
-**首先，要明确 nonlocal 关键字是定义在闭包里面的。**<br>
+[参考](https://blog.csdn.net/cn_wk/article/details/52723269)
+[进一步参考](https://blog.csdn.net/xCyansun/article/details/79672634?utm_source=copy )
+LEGB原则，当引用一个变量的时候，对这个变量的搜索是按找本地作用域(Local)、嵌套作用域(Enclosing function locals)、全局作用域(Global)、内置作用域(builtins模块)的顺序来进行的。
+    但是在函数内部却是：“当在函数中给一个变量名赋值是(而不是在一个表达式中对其进行引用)，Python总是创建或改变本地作用域的变量名，除非它已经在那个函数中被声明为全局变量. ”
+```py
+x = 99
+def func():
+    x = 88   #按照原则 创建了一个本地作用域的标量
+func()
+print(x)     #输出99
 ```
-请看以下代码：
-
-x = 0
-def outer():
-    x = 1
-    def inner():
-        x = 2
-        print("inner:", x)
-
-    inner()
-    print("outer:", x)
-
-outer()
-print("global:", x)
-
-# inner: 2
-# outer: 1
-# global: 0
+改为
+```py
+x=99
+def func():
+    global x
+    x=88
+func()
+print(x) 
 ```
-加入nonlocal<br>
+用nonlocal可以改嵌套作用域中的变量
+```py
+def func():
+    count = 1
+    def foo():
+        count = 12
+    foo()
+    print(count)
+func()    #输出1
 ```
-x = 0
-def outer():
-    x = 1
-    def inner():
-        nonlocal x
-        x = 2
-        print("inner:", x)
-
-    inner()
-    print("outer:", x)
-
-outer()
-print("global:", x)
-
-结果
-
-#inner: 2
-#outer: 2
-#global: 0
+改为
+```py
+def func():
+    count = 1
+    def foo():
+        nonlocal count
+        count = 12
+    foo()
+    print(count)
+func()     #输出12
 ```
-加了nonlocal就说明该变量在整个大函数里有效<br>
-**global**
-```
-x = 0
-def outer():
-    x = 1
-    def inner():
-        global x
-        x = 2
-        print("inner:", x)
+***这里要注意，使用global关键字修饰的变量之前可以并不存在，而使用nonlocal关键字修饰的变量在嵌套作用域中必须已经存在。
+第一，两者的功能不同。global关键字修饰变量后标识该变量是全局变量，对该变量进行修改就是修改全局变量，而nonlocal关键字修饰变量后标识该变量是上一级函数中的局部变量，如果上一级函数中不存在该局部变量，nonlocal位置会发生错误（最上层的函数使用nonlocal修饰变量必定会报错）。
+第二，两者使用的范围不同。global关键字可以用在任何地方，包括最上层函数中和嵌套函数中，即使之前未定义该变量，global修饰后也可以直接使用，而nonlocal关键字只能用于嵌套函数中，并且外层函数中定义了相应的局部变量，否则会发生错误***
 
-    inner()
-    print("outer:", x)
 
-outer()
-print("global:", x)
-
-结果
-
-#inner: 2
-#outer: 1
-#global: 2
-```
-
-global 是对整个环境下的变量起作用，而不是对函数类的变量起作用。
-
-接nonlocal
-------
-```
-def fun1():
-    x = 5
-    def fun2():
-        x *= 2
-        return x
-    return fun2()
-```
-**报错** UnboundLocalError: local variable 'x' referenced before assignment<br>
-对于fun1函数，x为局部变量。对于fun2函数，x为非全局的的外部变量。当在fun2中对x进行修改时，会将x视为fun2的局部变量，屏蔽掉fun1中对x的定义；如果仅仅在fun2中对x进行读取，则不会出现这个错误。
-
-**修改后**<br>
-```
-def fun1():
-    x = 5
-    def fun2():
-        nonlocal x
-        x *= 2
-        return x
-    return fun2()
- 
-fun1()
-Out[14]: 10
-```
 
 第十六个 返回函数之计数器:cat:
 =====
@@ -338,15 +288,14 @@ execute now():
 2015-3-25
 ```
 
-第十八个 if __name__=='__main__':sob:
+第十八个 if __name__=='__main__':cat: :dog:
 -----------
-google
+[参考](https://blog.csdn.net/yjk13703623757/article/details/77918633/)
+其实就是简单的认为，一个模块被导入时不运行此结构以下的代码
 
-
-第十九个
+第十九个 file like object:sob:
 -----------
-file like object
-
+鸭子类型，知道啥个意思，但是感觉有深入的用法，先码着
 
 第二十个
 --------

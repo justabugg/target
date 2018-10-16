@@ -2,13 +2,11 @@
 ======
 
 #### 解答
-参考[第一个参考](http://www.cnblogs.com/xybaby/p/6484262.html)<br>
+参考一[重要的笔记C3](https://kevinguo.me/2018/01/19/python-topological-sorting/#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
 参考[第二个参考](https://www.cnblogs.com/aademeng/articles/7262520.html)<br>
-注意菱形继承，对于计算机来说很复杂,具体可以研究一下C3算法
-![images](https://images2015.cnblogs.com/blog/1089769/201703/1089769-20170301150214126-933245747.png)<br>
-其实涉及到了代码/功能的复用，不可能每个东西都再写一遍某种功能，如果定义在一个类的话有些也不一定有这项功能，所以就出现了mixin<br>
+其实涉及到了代码功能的复用，不可能每个东西都再写一遍某种功能，如果定义在一个类的话有些也不一定有这项功能，所以就出现了mixin<br>
 在定义时记得加mixin，只是标记一下告诉人们这个类是为了实现功能而定的，而不是作为单一父类继承的。
-
+https://www.liaoxuefeng.com/discuss/001409195742008d822b26cf3de46aea14f2b7378a1ba91000/001535898869217a41f5fded4f846079504068ab308def9000
 
 第二个 metaclass
 ==========
@@ -131,3 +129,13 @@ print(end-start)
 第十三个 子进程控制输入输出
 ======
 
+
+
+
+
+
+
+
+
+[question1](https://www.liaoxuefeng.com/discuss/001409195742008d822b26cf3de46aea14f2b7378a1ba91000/00151937911313973d2490e71dc4f919b7f71c1616f3f8d000?page=1)
+(GIL)(http://cenalulu.github.io/python/gil-in-python/)//.0
