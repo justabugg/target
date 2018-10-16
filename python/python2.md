@@ -2,11 +2,11 @@
 ======
 
 #### 解答
-参考一[重要的笔记C3](https://kevinguo.me/2018/01/19/python-topological-sorting/#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
-参考[第二个参考](https://www.cnblogs.com/aademeng/articles/7262520.html)<br>
+* [重要的笔记C3](https://kevinguo.me/2018/01/19/python-topological-sorting/#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
+* [第二个参考](https://www.cnblogs.com/aademeng/articles/7262520.html)
+* [MRO](https://blog.csdn.net/lis_12/article/details/52859376#mro-method-resolution-order)
 其实涉及到了代码功能的复用，不可能每个东西都再写一遍某种功能，如果定义在一个类的话有些也不一定有这项功能，所以就出现了mixin<br>
 在定义时记得加mixin，只是标记一下告诉人们这个类是为了实现功能而定的，而不是作为单一父类继承的。
-https://www.liaoxuefeng.com/discuss/001409195742008d822b26cf3de46aea14f2b7378a1ba91000/001535898869217a41f5fded4f846079504068ab308def9000
 
 第二个 metaclass
 ==========
